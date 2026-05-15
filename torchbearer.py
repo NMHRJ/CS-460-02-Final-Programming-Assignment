@@ -5,12 +5,9 @@ The Torchbearer
 Student Name: Nikhil Maharaj
 Student ID:   828304185
 
-
-Submit this file as: torchbearer.py
 """
 
 import heapq
-
 
 # PART 1
 
@@ -26,7 +23,6 @@ def explain_problem():
 		"algorithm must explore candidate orderings and prune those that cannot "
 		"beat the best found so far."
 	)
-
 
 # PART 2
 def select_sources(spawn, relics, exit_node):
@@ -63,7 +59,6 @@ def precompute_distances(graph, spawn, relics, exit_node):
 		dist_table[src] = run_dijkstra(graph, src)
 	return dist_table
 
-
 # PART 3
 
 def dijkstra_invariant_check():
@@ -81,9 +76,7 @@ def dijkstra_invariant_check():
 		"optimal relic ordering or select a suboptimal one."
 	)
 
-
 # PART 4
-
 def explain_search():
 	return (
 		"Greedy fails as always choosing the nearest unvisited relic commits to a "
@@ -97,7 +90,6 @@ def explain_search():
 
 
 # PARTS 5 + 6
-
 def find_optimal_route(dist_table, spawn, relics, exit_node):
 	relics_remaining = set(relics)
 	best = [float('inf'), []]
@@ -113,7 +105,6 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
 	)
 
 	return (best[0], best[1])
-
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
              cost_so_far, exit_node, best):
@@ -161,7 +152,6 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
 
 		relics_visited_order.pop()
 		relics_remaining.add(next_relic)
-
 
 # PIPELINE
 
